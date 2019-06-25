@@ -1,0 +1,30 @@
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+
+process.stdin.on("data", function (input) {
+    stdin_input += input;
+});
+
+process.stdin.on("end", function () {
+   main(stdin_input);
+});
+
+function main(input) {
+ 
+    var inputarray = input.split("\n")
+    var personen = Number(inputarray[0]);
+    var minimal = Number(inputarray[1]);
+    
+    for(var x = 0; x < personen; x++)
+    {
+        if(inputarray[x+2] < minimal)
+        {
+            console.log("NO");
+        }
+        else
+        {
+            console.log("YES");
+        }
+    }
+}
